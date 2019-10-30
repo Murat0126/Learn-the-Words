@@ -10,8 +10,8 @@
 
     <LinearLayout
         android:id="@+id/layot_1"
-        android:layout_width="394dp"
-        android:layout_height="181dp"
+        android:layout_width="431dp"
+        android:layout_height="238dp"
         android:background="@color/transparent"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +35,19 @@
             android:backgroundTint="@color/green"
             android:text="Добавить новых слов"
             android:textColor="@android:color/white" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clear_dates"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:backgroundTint="@color/endicon_selector"
+            android:text="очистить базу"
+            android:textColor="@android:color/white"
+            android:onClick=""/>
 
 
     </LinearLayout>

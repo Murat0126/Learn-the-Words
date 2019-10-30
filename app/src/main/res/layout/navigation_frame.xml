@@ -12,7 +12,6 @@
     android:longClickable="true"
 
     >
-
     <TextView
         android:id="@+id/text_more_list"
         android:layout_width="match_parent"

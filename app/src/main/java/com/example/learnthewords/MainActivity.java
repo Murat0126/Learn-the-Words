@@ -9,11 +9,13 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.learnthewords.adapter.Adapter;
+import com.example.learnthewords.vocabulary.Vocabulary;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
@@ -52,7 +54,9 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View view) {
-                showBottomSheet();
+                Intent intent = new Intent(MainActivity.this, Vocabulary.class);
+                startActivity(intent);
+//                showBottomSheet();
             }
         });
 

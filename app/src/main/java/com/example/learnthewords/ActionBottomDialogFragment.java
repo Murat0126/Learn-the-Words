@@ -24,7 +24,7 @@ import java.io.File;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 
-public class ActionBottomDialogFragment extends BottomSheetDialogFragment implements View.OnClickListener {
+public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
 
     public static final String TAG = "ActionBottomDialog";
     private TextInputEditText originText, translateText;
@@ -53,13 +53,13 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment implem
         super.onViewCreated(view, savedInstanceState);
         originText = view.findViewById(R.id.origin_text);
         translateText = view.findViewById(R.id.translate_text);
-        addButton = view.findViewById(R.id.add_button);
-        complateButton = view.findViewById(R.id.complete_button);
+//        addButton = view.findViewById(R.id.add_button);
+//        complateButton = view.findViewById(R.id.complete_button);
         closeIcon = view.findViewById(R.id.close_icon_in_ads_dialog);
 
-        addButton.setOnClickListener(this);
-        complateButton.setOnClickListener(this);
-        closeIcon.setOnClickListener(this);
+//        addButton.setOnClickListener(this);
+//        complateButton.setOnClickListener(this);
+//        closeIcon.setOnClickListener(this);
 
         dbHelper = new DBHelper(getContext());
 
@@ -81,71 +81,71 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment implem
     }
 
 
-    @Override
-    public void onClick(View v) {
-
-        String origin = originText.getText().toString();
-        String translate = translateText.getText().toString();
-
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
-
-        ContentValues contentValues = new ContentValues();
-
-
-        switch (v.getId()) {
-
-            case R.id.add_button:
-
-                contentValues.put(DBHelper.KEY_ORIGIN_WORD, origin);
-                contentValues.put(DBHelper.KEY_TRANSLATE_OF_WORD, translate);
-                database.insert(DBHelper.TABLE_DICTIONARY, null, contentValues);
-
-                break;
-
-            case R.id.complete_button:
-
-                Cursor cursor = database.query(DBHelper.TABLE_DICTIONARY, null, null, null,
-                        null, null, null);
-                if (cursor.moveToFirst()) {
-                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
-                    int originTextIndex = cursor.getColumnIndex(DBHelper.KEY_ORIGIN_WORD);
-                    int translateIndex = cursor.getColumnIndex(DBHelper.KEY_TRANSLATE_OF_WORD);
-                    do {
-
-                        items.add(cursor.getString(originTextIndex));
-                        Toast.makeText(getContext(), MessageFormat.format("ID = {0}, name = {1}, email = {2}", cursor.getInt(idIndex), cursor.getString(originTextIndex), cursor.getString(translateIndex)), Toast.LENGTH_SHORT).show();
-
-                        File f = getActivity().getDatabasePath(DBHelper.DATABASE_NAME);
-                         long dbSize = f.length();
-
-                        Log.d("mLog", "Size = " + dbSize +
-                                "ID = " + cursor.getInt(idIndex) +
-                                ", name = " + cursor.getString(originTextIndex) +
-                                ", email = " + cursor.getString(translateIndex));
-
-
-
-                    } while (cursor.moveToNext());
-
-                        adapter = new Adapter(getActivity(), items);
-                        adapter.changeAdapter(items);
-
-                } else
-                    Log.d("mLog","0 rows");
-
-                dismiss();
-                cursor.close();
-                break;
-
-
-
-//            case R.id.btnClear:
-//                database.delete(DBHelper.TABLE_CONTACTS, null, null);
+//    @Override
+//    public void onClick(View v) {
+//
+//        String origin = originText.getText().toString();
+//        String translate = translateText.getText().toString();
+//
+//        SQLiteDatabase database = dbHelper.getWritableDatabase();
+//
+//        ContentValues contentValues = new ContentValues();
+//
+//
+//        switch (v.getId()) {
+//
+//            case R.id.add_button:
+//
+//                contentValues.put(DBHelper.KEY_ORIGIN_WORD, origin);
+//                contentValues.put(DBHelper.KEY_TRANSLATE_OF_WORD, translate);
+//                database.insert(DBHelper.TABLE_DICTIONARY, null, contentValues);
+//
 //                break;
-        }
-
-//        adapter = new Adapter(getContext(), items);
-
-        dbHelper.close();
-    }
+//
+//            case R.id.complete_button:
+//
+//                Cursor cursor = database.query(DBHelper.TABLE_DICTIONARY, null, null, null,
+//                        null, null, null);
+//                if (cursor.moveToFirst()) {
+//                    int idIndex = cursor.getColumnIndex(DBHelper.KEY_ID);
+//                    int originTextIndex = cursor.getColumnIndex(DBHelper.KEY_ORIGIN_WORD);
+//                    int translateIndex = cursor.getColumnIndex(DBHelper.KEY_TRANSLATE_OF_WORD);
+//                    do {
+//
+//                        items.add(cursor.getString(originTextIndex));
+//                        Toast.makeText(getContext(), MessageFormat.format("ID = {0}, name = {1}, email = {2}", cursor.getInt(idIndex), cursor.getString(originTextIndex), cursor.getString(translateIndex)), Toast.LENGTH_SHORT).show();
+//
+//                        File f = getActivity().getDatabasePath(DBHelper.DATABASE_NAME);
+//                         long dbSize = f.length();
+//
+//                        Log.d("mLog", "Size = " + dbSize +
+//                                "ID = " + cursor.getInt(idIndex) +
+//                                ", name = " + cursor.getString(originTextIndex) +
+//                                ", email = " + cursor.getString(translateIndex));
+//
+//
+//
+//                    } while (cursor.moveToNext());
+//
+//                        adapter = new Adapter(getActivity(), items);
+//                        adapter.changeAdapter(items);
+//
+//                } else
+//                    Log.d("mLog","0 rows");
+//
+//                dismiss();
+//                cursor.close();
+//                break;
+//
+//
+//
+////            case R.id.btnClear:
+////                database.delete(DBHelper.TABLE_CONTACTS, null, null);
+////                break;
+//        }
+//
+////        adapter = new Adapter(getContext(), items);
+//
+//        dbHelper.close();
+//    }
 }

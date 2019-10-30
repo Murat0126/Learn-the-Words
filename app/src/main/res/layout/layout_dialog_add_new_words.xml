@@ -163,22 +163,22 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/add_button"
-                    android:layout_width="140dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/text_input_box_stroke"
-                    android:text="добавить"
-                    android:textSize="12dp" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/complete_button"
-                    android:layout_width="140dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="завершить"
-                    android:textSize="12dp"
-                    android:backgroundTint="@color/text_input_box_stroke"/>
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/add_button"-->
+<!--                    android:layout_width="140dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:backgroundTint="@color/text_input_box_stroke"-->
+<!--                    android:text="добавить"-->
+<!--                    android:textSize="12dp" />-->
+<!---->
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/complete_button"-->
+<!--                    android:layout_width="140dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:text="завершить"-->
+<!--                    android:textSize="12dp"-->
+<!--                    android:backgroundTint="@color/text_input_box_stroke"/>-->
 
 
             </LinearLayout>

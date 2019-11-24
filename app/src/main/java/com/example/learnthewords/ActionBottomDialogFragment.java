@@ -1,27 +1,20 @@
 package com.example.learnthewords;
 
-import android.content.ContentValues;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.learnthewords.adapter.Adapter;
 import com.example.learnthewords.dataBase.DBHelper;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.io.File;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 
 public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
@@ -32,9 +25,6 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
     private DBHelper dbHelper;
     SQLiteDatabase database;
     ImageView closeIcon;
-    ArrayList<String> items = new ArrayList<>();
-    MainActivity mainActivity;
-    Adapter adapter ;
 
 
     static ActionBottomDialogFragment newInstance() {

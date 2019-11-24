@@ -26,28 +26,27 @@
             android:layout_marginRight="50dp" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/add_new_words"
+            android:id="@+id/start_learn"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
             android:backgroundTint="@color/green"
-            android:text="Добавить новых слов"
+            android:text="Start Learn"
             android:textColor="@android:color/white" />
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/clear_dates"
+            android:id="@+id/add_new_words"
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="50dp"
             android:layout_marginRight="50dp"
-            android:backgroundTint="@color/endicon_selector"
-            android:text="очистить базу"
-            android:textColor="@android:color/white"
-            android:onClick=""/>
+            android:backgroundTint="@color/colorYellow"
+            android:text="@string/myvocabulary"
+            android:textColor="@android:color/white" />
 
 
     </LinearLayout>
@@ -55,19 +54,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="674dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
+        android:background="@drawable/book"
         app:layout_constraintTop_toBottomOf="@id/layot_1"
         tools:layout_editor_absoluteX="0dp"
-        tools:ignore="MissingConstraints">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_in_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:orientation="vertical" />
 
 
     <com.google.android.material.appbar.AppBarLayout

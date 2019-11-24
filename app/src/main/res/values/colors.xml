@@ -13,6 +13,12 @@
     <color name="normalTextColor">#252525</color>
     <color name="blue">#0529FA</color>
     <color name="colorGray">#C5C4C4</color>
+
+
+    <color name="colorRipple">#F1F0F0</color>
+
+
+
     <color name="colorRed">#F70303</color>
     <color name="indigo">#1F0257</color>
     <color name="yellow">#FFEB3B</color>

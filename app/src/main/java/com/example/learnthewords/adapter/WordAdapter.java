@@ -1,6 +1,5 @@
 package com.example.learnthewords.adapter;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -61,10 +60,9 @@ public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> implements
             @Override
             public void onClick(View view) {
                 //delete row from database
-
                 mDatabase.deleteWord(words.getId());
 
-                //refresh the activity page.
+//                refresh the activity page.
                 ((Activity)context).finish();
                 context.startActivity(((Activity) context).getIntent());
             }
@@ -122,7 +120,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordViewHolder> implements
         LayoutInflater inflater = LayoutInflater.from(context);
         View subView = inflater.inflate(R.layout.layout_dialog_add_new_words, null);
 
-        final EditText wordField = (EditText)subView.findViewById(R.id.add_new_words);
+        final EditText wordField = (EditText)subView.findViewById(R.id.origin_text);
         final EditText translateField = (EditText)subView.findViewById(R.id.translate_text);
 
         if(words != null){

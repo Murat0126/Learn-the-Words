@@ -15,7 +15,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.ArrayList;
 
 public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
 
@@ -24,7 +23,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
     private MaterialButton addButton,complateButton;
     private DBHelper dbHelper;
     SQLiteDatabase database;
-    ImageView closeIcon;
+    private ImageView closeIcon;
 
 
     static ActionBottomDialogFragment newInstance() {
@@ -45,7 +44,7 @@ public class ActionBottomDialogFragment extends BottomSheetDialogFragment {
         translateText = view.findViewById(R.id.translate_text);
 //        addButton = view.findViewById(R.id.add_button);
 //        complateButton = view.findViewById(R.id.complete_button);
-        closeIcon = view.findViewById(R.id.close_icon_in_ads_dialog);
+//        closeIcon = view.findViewById(R.id.close_icon_in_ads_dialog);
 
 //        addButton.setOnClickListener(this);
 //        complateButton.setOnClickListener(this);

@@ -60,6 +60,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <LinearLayout
+                    android:id="@+id/layot_1"
                     android:layout_width="192dp"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -69,6 +70,7 @@
                     android:longClickable="true">
 
                     <TextView
+                        android:id="@+id/element_1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -80,6 +82,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/layot_2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -89,6 +92,7 @@
                     android:longClickable="true">
 
                     <TextView
+                        android:id="@+id/element_2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -114,6 +118,7 @@
                 app:layout_constraintTop_toBottomOf="@id/linearLayout6">
 
                 <LinearLayout
+                    android:id="@+id/layot_3"
                     android:layout_width="192dp"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -124,6 +129,7 @@
 
 
                     <TextView
+                        android:id="@+id/element_3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -135,6 +141,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/layot_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -144,6 +151,7 @@
                     android:longClickable="true">
 
                     <TextView
+                        android:id="@+id/element_4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -168,7 +176,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <LinearLayout
-
+                    android:id="@+id/layot_5"
                     android:layout_width="192dp"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -178,6 +186,7 @@
                     android:longClickable="true">
 
                     <TextView
+                        android:id="@+id/element_5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
@@ -189,6 +198,7 @@
 
 
                 <LinearLayout
+                    android:id="@+id/layot_6"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:behavior_hideable="true"
@@ -198,6 +208,7 @@
                     android:longClickable="true">
 
                     <TextView
+                        android:id="@+id/element_6"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"

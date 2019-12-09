@@ -1,7 +1,6 @@
 package com.example.learnthewords.vocabulary;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -11,18 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.learnthewords.R;
@@ -46,10 +42,10 @@ public class Vocabulary extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vocabulary);
 
-        FrameLayout fLayout = (FrameLayout) findViewById(R.id.activity_to_do);
+        FrameLayout fLayout =  findViewById(R.id.activity_to_do);
         setToolbar("Words");
 
-        RecyclerView wordsView = (RecyclerView)findViewById(R.id.product_list);
+        RecyclerView wordsView = findViewById(R.id.product_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         wordsView.setLayoutManager(linearLayoutManager);
         wordsView.setHasFixedSize(true);
@@ -63,9 +59,8 @@ public class Vocabulary extends AppCompatActivity  {
 
         }else {
             wordsView.setVisibility(View.GONE);
-            Toast.makeText(this, "There is no contact in the database. Start adding now", Toast.LENGTH_LONG).show();
         }
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,8 +73,8 @@ public class Vocabulary extends AppCompatActivity  {
         LayoutInflater inflater = LayoutInflater.from(this);
         View subView = inflater.inflate(R.layout.layout_dialog_add_new_words, null);
 
-        final EditText nameField = (EditText)subView.findViewById(R.id.origin_text);
-        final EditText noField = (EditText)subView.findViewById(R.id.translate_text);
+        final EditText nameField =subView.findViewById(R.id.origin_text);
+        final EditText noField = subView.findViewById(R.id.translate_text);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(subView);
@@ -92,7 +87,7 @@ public class Vocabulary extends AppCompatActivity  {
                 final String translate = noField.getText().toString();
 
                 if(TextUtils.isEmpty(word)){
-                    Toast.makeText(Vocabulary.this, "Something went wrong. Check your input values", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Vocabulary.this, "Вы пытаетесь сохранить пустую строку!", Toast.LENGTH_LONG).show();
                 }
                 else{
                     Words newContact = new Words(word, translate);
@@ -162,21 +157,6 @@ public class Vocabulary extends AppCompatActivity  {
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
-    @Nullable
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-
-        SearchView searchView = (SearchView) menu.findItem( R.id.search).getActionView();
-        SearchView.SearchAutoComplete searchAutoComplete = (SearchView.SearchAutoComplete)searchView.findViewById(androidx.appcompat.R.id.search_src_text);
-        searchAutoComplete.setHintTextColor(Color.BLACK);
-        searchAutoComplete.setTextColor(Color.BLACK);
-
-        ImageView icon = searchView.findViewById(androidx.appcompat.R.id.search_button);
-        icon.setColorFilter(Color.BLACK);
-
-        ImageView searchCloseIcon = (ImageView)searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
-        searchCloseIcon.setColorFilter(Color.BLACK);
-    }
 
 
 

@@ -11,13 +11,15 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
 
+import com.example.learnthewords.dataBase.SQLiteDatabase;
 import com.example.learnthewords.test.TestActivity;
 import com.example.learnthewords.vocabulary.Vocabulary;
 import com.google.android.material.button.MaterialButton;
 
-
 public class MainActivity extends AppCompatActivity {
 
+
+    SQLiteDatabase sqLiteDatabase;
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState, @NonNull PersistableBundle outPersistentState) {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TestActivity.class);
+
                 startActivity(intent);
             }
         });
